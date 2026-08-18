@@ -1,0 +1,254 @@
+"use client";
+
+import { useState, useRef } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { Navbar } from "@/components/sections/Navbar";
+import { Footer } from "@/components/sections/Footer";
+import { HeroContactForm } from '@/components/sections/HeroContactForm';
+import {
+  ArrowRight, CheckCircle2, ChevronDown, Smartphone, Cpu,
+  Zap, Puzzle, Wrench, RefreshCw, BarChart3, Users,
+} from "lucide-react";
+const heroImg = "/react-native-hero.png";
+import { useQuoteModal } from '@/context/QuoteModalContext';
+
+const GOLD = "#7C3AED";
+const pillStyle = { background: "rgba(124,58,237,0.08)", border: "1px solid rgba(124,58,237,0.22)" };
+const cardStyle = { background: "rgba(255,255,255,0.025)", border: "1px solid rgba(255,255,255,0.07)" };
+
+const whyReactNative = [
+  { icon: RefreshCw,   label: "Cross-platform development", text: "React Native is an open-source framework developed by Facebook for building cross-platform mobile applications with a nearly native look and experience. You can write once and deploy to both iOS and Android." },
+  { icon: Zap,         label: "Code reusability", text: "One of the significant advantages of React Native is code reusability. A React Native app can share up to 90% of code across platforms, dramatically reducing development time and cost." },
+  { icon: BarChart3,   label: "Hot-reloading", text: "React Native is also known for streaming, which allows developers to see changes they make in the code instantly, reflected in the running app. This dramatically speeds up development and iteration cycles." },
+  { icon: Users,       label: "Large ecosystem and community support", text: "React Native has a huge community of libraries, tools, and active contributors. A rich ecosystem of third-party libraries and native module bindings makes it easy to add virtually any functionality to your app." },
+];
+
+const services = [
+  {
+    icon: Smartphone,
+    title: "UI/UX Design for React Native Apps",
+    body: "Your app's visual design and intuitive interface are crucial for the success of any mobile app. Our UI/UX designers specialise in creating captivating and intuitive user experiences that align with your brand identity and engage your target audience.",
+    bullets: ["Material & iOS design", "Custom component libraries", "Accessibility compliance", "Motion design"],
+  },
+  {
+    icon: RefreshCw,
+    title: "Cross-Platform App Migration",
+    body: "If you have existing mobile apps on a different framework and wish to migrate to React Native, we can help. Our migration specialists ensure a smooth transition of functionality and user experience, preserving the integrity of your app throughout.",
+    bullets: ["Native-to-RN migration", "Web-to-mobile conversion", "Data migration", "Zero-downtime transitions"],
+  },
+  {
+    icon: Zap,
+    title: "Performance Optimization",
+    body: "Slow and unresponsive apps can lead to frustration and decreased engagement. Our performance optimisation services for React Native apps ensure your app is fast, responsive, and efficient. We profile, identify bottlenecks, and implement targeted fixes.",
+    bullets: ["JS thread optimisation", "Bridge performance", "Memory management", "60fps rendering"],
+  },
+  {
+    icon: Puzzle,
+    title: "Integration with Native Modules",
+    body: "If your app requires native third-party APIs and services, whether you need to integrate payment gateways, biometrics, Bluetooth, camera, or hardware sensors, we handle the integration process efficiently, ensuring proper security and reliability.",
+    bullets: ["Payment gateways", "Biometric auth", "Bluetooth & NFC", "Camera & media"],
+  },
+  {
+    icon: Wrench,
+    title: "Maintenance and Support",
+    body: "We offer ongoing maintenance and support services to ensure your app remains smooth operations. We offer regular updates, including new React Native versions, OS compatibility patches, and feature enhancements to keep your app ahead of the curve.",
+    bullets: ["RN version upgrades", "OS compatibility", "Bug triage", "Feature additions"],
+  },
+];
+
+const whyUs = [
+  "Experienced React Native developers with cross-industry knowledge",
+  "Commitment to delivering high-quality solutions",
+  "Proven track record of successful projects",
+  "Team-wide integration of native modules and third-party APIs",
+  "Human-centric UI/UX design that drives retention",
+  "Dedicated support and maintenance teams",
+];
+
+const faqs = [
+  { q: "What is React Native and should I use it?", a: "React Native is an open-source framework developed by Meta for building cross-platform mobile apps using JavaScript and React. It allows you to write one codebase that runs on both iOS and Android, delivering near-native performance at a fraction of the cost of building two separate apps." },
+  { q: "How much does React Native app development cost in the UK?", a: "React Native development typically costs less than native development because code is shared across platforms. Simple apps start from £8,000; mid-complexity apps range from £20,000–£60,000; and enterprise-grade solutions can exceed £100,000. We provide detailed quotes after a free discovery call." },
+  { q: "Is React Native better than Flutter?", a: "Both are excellent choices. React Native has a larger ecosystem, is backed by Meta, and benefits from a massive JavaScript developer community. Flutter (by Google) offers superior rendering consistency across platforms using its own rendering engine. The best choice depends on your project requirements." },
+  { q: "How long does React Native app development take?", a: "A basic React Native app can be delivered in 6–10 weeks. Mid-size apps typically take 3–5 months. Complex multi-feature applications may take 6–12 months. We provide transparent milestone-based timelines upfront." },
+  { q: "What is the difference between React Native and native app development?", a: "Native development (Swift for iOS, Kotlin for Android) gives maximum performance and full access to platform APIs but requires two separate codebases. React Native uses JavaScript and shares ~90% of code across platforms, reducing cost and time while delivering near-native performance for most use cases." },
+];
+
+function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
+  return (
+    <motion.details
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.06 }}
+      className="group rounded-xl overflow-hidden"
+      style={{ background: "rgba(255,255,255,0.025)", border: "1px solid rgba(255,255,255,0.07)" }}
+    >
+      <summary className="flex items-center justify-between px-6 py-5 cursor-pointer list-none gap-4 [&::-webkit-details-marker]:hidden">
+        <span className="text-white font-semibold text-sm leading-snug">{q}</span>
+        <ChevronDown className="w-5 h-5 text-primary flex-shrink-0 transition-transform duration-200 group-open:rotate-180" />
+      </summary>
+      <div className="px-6 pb-5 text-white/55 text-sm leading-relaxed border-t border-white/5 pt-4">{a}</div>
+    </motion.details>
+  );
+}
+
+export default function ReactNativePage() {
+  const { openQuoteModal } = useQuoteModal();
+  const { scrollY } = useScroll();
+  const heroY  = useTransform(scrollY, [0, 700], ["0%", "30%"]);
+  const heroOp = useTransform(scrollY, [0, 490], [1, 0]);
+
+  return (
+    <main className="min-h-screen bg-[#080316] text-foreground overflow-x-hidden selection:bg-primary/30">
+      <Navbar />
+
+      {/* ── Hero ── */}
+      <section className="relative min-h-[92vh] flex items-center overflow-hidden pt-24">
+        <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
+          <img src={heroImg} alt="React Native Development" className="absolute inset-0 w-full h-full object-cover" style={{ filter: "brightness(0.35) saturate(1.1)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(8,3,22,0.90) 0%, rgba(8,3,22,0.50) 50%, rgba(8,3,22,0.85) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 60% at 30% 50%, rgba(124,58,237,0.07) 0%, transparent 65%)" }} />
+        </motion.div>
+
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14 items-center">
+          <motion.div style={{ opacity: heroOp }}>
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs text-primary font-semibold uppercase tracking-widest mb-6" style={pillStyle}>
+              <Smartphone className="w-3 h-3" /> React Native Development
+            </motion.div>
+            <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.65 }} className="text-4xl md:text-6xl font-black text-white leading-[1.08] tracking-tight mb-6">
+              Hire Expert{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF40C8] via-[#7C3AED] to-[#C060FF]">React Native Developers</span>
+              <br />for Your App
+            </motion.h1>
+            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.6 }} className="text-white/50 text-xl leading-relaxed mb-10 max-w-md">
+              Build the right product from the very start — with the UK's leading React Native development agency.
+            </motion.p>
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.5 }} className="flex flex-wrap gap-4">
+              <a href="/quote" className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full font-bold text-base transition-all duration-300 hover:scale-105 hover:shadow-[0_0_50px_rgba(124,58,237,0.45)]" style={{ background: "#7C3AED", color: "#ffffff" }}>
+                Get a Free Quote <ArrowRight className="w-5 h-5" />
+              </a>
+            </motion.div>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.25, duration: 0.7 }} className="rounded-2xl p-8" style={{ background: "rgba(6,2,16,0.7)", border: "1px solid rgba(255,255,255,0.08)", backdropFilter: "blur(20px)" }}>
+            <h3 className="text-white font-bold text-xl mb-1">Start Your Project</h3>
+            <p className="text-white/40 text-sm mb-6">Free consultation, no commitment</p>
+            <HeroContactForm pageName="React Native Development" extraField={{ label: "Requirement", type: "text", placeholder: "Describe your app idea..." }} />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Why React Native ── */}
+      <section className="py-24 max-w-7xl mx-auto px-6 lg:px-10">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs text-primary font-semibold uppercase tracking-widest mb-6" style={pillStyle}>
+          Hire React Native App Developers in the UK
+        </motion.div>
+        <motion.h2 initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-3xl md:text-4xl font-black text-white mb-4 leading-tight">
+          Why Choose React Native Development?
+        </motion.h2>
+        <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="text-white/50 text-lg leading-relaxed mb-10 max-w-3xl">
+          React Native is an open-source framework developed by Facebook for building cross-platform mobile applications with a nearly native look and experience. It enables a developer to create a mobile app using JavaScript which, when compiled, runs as a native application on both iOS and Android platforms.
+        </motion.p>
+        <div className="grid md:grid-cols-2 gap-6">
+          {whyReactNative.map(({ icon: Icon, label, text }, i) => (
+            <motion.div key={label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="flex gap-4 p-5 rounded-2xl" style={cardStyle}>
+              <div className="flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "rgba(124,58,237,0.12)" }}>
+                <Icon className="w-4.5 h-4.5 text-primary" />
+              </div>
+              <div>
+                <p className="text-primary font-bold text-sm mb-1">{i + 1}. {label}</p>
+                <p className="text-white/50 text-sm leading-relaxed">{text}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── From Ideas to Live ── */}
+      <section className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 0%, rgba(124,58,237,0.03) 50%, transparent 100%)" }} />
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-10 text-center">
+          <span className="text-primary font-bold text-sm uppercase tracking-widest">From Ideas to Live</span>
+          <h2 className="text-3xl md:text-4xl font-black text-white mt-3 mb-4">Bringing Your Idea to Life</h2>
+          <p className="text-white/45 max-w-2xl mx-auto text-base leading-relaxed">
+            We can take your ideas and turn it into a fully functional project. Our team has experience of helping businesses across various industries to develop outstanding mobile applications right from the ideation phase.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Services ── */}
+      <section id="services" className="py-8 pb-24 max-w-7xl mx-auto px-6 lg:px-10">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs text-primary font-semibold uppercase tracking-widest mb-6" style={pillStyle}>
+          Our Services and Offerings
+        </motion.div>
+        <motion.p initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-white/45 max-w-2xl mb-12 text-base leading-relaxed">
+          At HireProgrammer, we offer a comprehensive website of services that can help you build React Native to create mobile applications. We're dedicated to helping your app thrive, going above and beyond to deliver results that align carefully with your unique needs.
+        </motion.p>
+        <div className="grid md:grid-cols-2 gap-6">
+          {services.map(({ icon: Icon, title, body, bullets }, i) => (
+            <motion.div key={title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="p-7 rounded-2xl group hover:border-primary/30 transition-colors duration-300" style={cardStyle}>
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: "rgba(124,58,237,0.12)" }}>
+                  <Icon className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="text-white font-bold text-lg leading-snug pt-1">{title}</h3>
+              </div>
+              <p className="text-white/50 text-sm leading-relaxed mb-5">{body}</p>
+              <ul className="space-y-2">
+                {bullets.map(b => (
+                  <li key={b} className="flex items-center gap-2 text-white/60 text-sm">
+                    <ArrowRight className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Why Choose Us ── */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 0%, rgba(124,58,237,0.04) 50%, transparent 100%)" }} />
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs text-primary font-semibold uppercase tracking-widest mb-4" style={pillStyle}>Why Choose Us?</div>
+            <h2 className="text-3xl md:text-4xl font-black text-white">Why HireProgrammer?</h2>
+          </motion.div>
+          <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            {whyUs.map((text, i) => (
+              <motion.div key={i} initial={{ opacity: 0, x: i % 2 === 0 ? -16 : 16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="flex items-start gap-3 p-4 rounded-xl" style={cardStyle}>
+                <CheckCircle2 className="w-4.5 h-4.5 text-primary flex-shrink-0 mt-0.5" />
+                <p className="text-white/70 text-sm leading-relaxed">{text}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="py-24 max-w-4xl mx-auto px-6 lg:px-10">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs text-primary font-semibold uppercase tracking-widest mb-4" style={pillStyle}>FAQ</div>
+          <h2 className="text-3xl md:text-4xl font-black text-white">Frequently Asked Questions</h2>
+        </motion.div>
+        <div className="space-y-3">
+          {faqs.map((faq, i) => <FaqItem key={i} {...faq} index={i} />)}
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="py-20 px-6">
+        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-4xl mx-auto text-center rounded-3xl py-16" style={{ background: "linear-gradient(135deg, rgba(124,58,237,0.10) 0%, rgba(124,58,237,0.04) 100%)", border: "1px solid rgba(124,58,237,0.18)" }}>
+          <p className="text-white/50 text-sm uppercase tracking-widest font-semibold mb-4">Ready to build?</p>
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-6">Ready to build your React Native app? Book a free consultation and see how we can support you.</h2>
+          <a href="/contact-us" className="inline-flex items-center gap-2.5 px-10 py-4 rounded-full font-bold text-base transition-all duration-300 hover:scale-105 hover:shadow-[0_0_50px_rgba(124,58,237,0.4)]" style={{ background: "#7C3AED", color: "#ffffff" }}>
+            Contact Us <ArrowRight className="w-5 h-5" />
+          </a>
+        </motion.div>
+      </section>
+
+      <Footer />
+    </main>
+  );
+}

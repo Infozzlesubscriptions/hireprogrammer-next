@@ -1,0 +1,218 @@
+Alternate subtle background shades.
+
+Example:
+
+Hero → #080312
+Next section → #0B0418
+Next → #120624
+Next → #0A0315
+
+Very subtle differences.
+
+This creates:
+
+visual rhythm
+scanability
+section boundaries
+
+without changing layout.
+
+2. Increase Card Brightness (MOST IMPORTANT)
+
+Your cards are nearly the same color as the page background.
+
+Current Problem
+
+Cards:
+
+too transparent
+too dark
+weak borders
+
+So content disappears.
+
+Better Card Style
+Background
+
+Instead of:
+
+rgba(255,255,255,0.03)
+
+Use:
+
+rgba(20, 12, 40, 0.88)
+
+or
+
+#140A28
+Border
+
+Add:
+
+border: 1px solid rgba(255,255,255,0.08);
+Glow
+
+Subtle:
+
+box-shadow: 0 0 40px rgba(128, 0, 255, 0.08);
+
+This alone will massively improve readability.
+
+3. Body Text Is Too Dim
+
+This is the second biggest issue.
+
+You’re probably using something like:
+
+opacity: 0.5
+
+or grey-purple text.
+
+Better Text Hierarchy
+Headings
+
+Pure white:
+
+#FFFFFF
+Body Text
+
+Use:
+
+rgba(255,255,255,0.72)
+
+instead of 0.45–0.55.
+
+Supporting Labels
+rgba(255,255,255,0.55)
+4. Add Soft Glow Behind Important Sections
+
+This makes sections readable without brighter backgrounds.
+
+Example behind:
+
+testimonials
+AI section
+stats
+
+Add blurred radial gradient:
+
+background:
+radial-gradient(
+circle at center,
+rgba(128,0,255,0.12),
+transparent 70%
+);
+
+Very subtle.
+
+This creates visual focus.
+
+5. Increase Vertical Separation
+
+Your sections are visually compressed because the backgrounds are too similar.
+
+Without changing layout:
+
+increase top/bottom padding by 20–30px
+especially between dark sections
+
+This gives breathing room.
+
+6. Testimonials Need Better Contrast
+
+Current issue:
+Cards visually sink into the background.
+
+Improve Like This
+Card BG
+rgba(18,10,35,0.95)
+Hover
+transform: translateY(-4px);
+border-color: rgba(168,85,247,0.4);
+Quote Text
+
+Increase opacity to:
+
+0.78
+7. Expertise Cards Need Stronger Focus
+
+Right now the center card isn’t separated enough.
+
+Add:
+Active Card
+brighter border
+stronger glow
+slightly higher elevation
+more blur behind
+
+Example:
+
+box-shadow:
+0 20px 60px rgba(124,58,237,0.22);
+8. Add Noise Texture Overlay
+
+Your gradients are very smooth and flat.
+
+A subtle grain/noise texture makes dark UI feel richer.
+
+Very common in:
+
+Linear
+Stripe
+Vercel
+modern SaaS sites
+
+Opacity:
+
+0.03–0.05
+
+This helps sections separate naturally.
+
+9. Improve FAQ Contrast
+
+Current FAQ blends into the background.
+
+Make accordions:
+
+lighter than page
+stronger borders
+slightly brighter hover
+
+Example:
+
+background: rgba(255,255,255,0.04);
+border: 1px solid rgba(255,255,255,0.06);
+10. Use Layering Instead of Brightness
+
+Don’t make the site “lighter.”
+
+Instead:
+
+keep dark luxury aesthetic
+increase separation between layers
+
+That’s the real fix.
+
+Think:
+
+page background
+section layer
+card layer
+elevated card layer
+highlighted layer
+
+Right now everything exists on almost the same depth level.
+
+Ideal Visual Direction
+
+You want:
+
+Vercel darkness
+Linear contrast
+Stripe depth
+Framer glow layering
+
+NOT:
+
+pure black everywhere
+transparent cards everywhere

@@ -1,0 +1,133 @@
+{
+  "colorScheme": "dark",
+  "fonts": [
+    {
+      "family": "Mazzardh",
+      "role": "heading"
+    },
+    {
+      "family": "Arial",
+      "role": "body"
+    }
+  ],
+  "colors": {
+    "primary": "#1C4EFF",
+    "secondary": "#0000EE",
+    "accent": "#1C4EFF",
+    "background": "#13101C",
+    "textPrimary": "#13101C",
+    "link": "#1A0B54"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Arial",
+      "heading": "Mazzardh"
+    },
+    "fontStacks": {
+      "heading": [
+        "Mazzardh",
+        "Arial",
+        "sans-serif"
+      ],
+      "body": [
+        "Mazzardh",
+        "Arial",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Mazzardh",
+        "Arial",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "26.6688px",
+      "h2": "77.3376px",
+      "body": "57.6px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "2px"
+  },
+  "components": {
+    "buttonPrimary": {
+      "background": "#1C4EFF",
+      "textColor": "#0000EE",
+      "borderRadius": "13.248px",
+      "borderRadiusCorners": {
+        "topLeft": "13.248px",
+        "topRight": "13.248px",
+        "bottomRight": "13.248px",
+        "bottomLeft": "13.248px"
+      },
+      "shadow": "none"
+    },
+    "buttonSecondary": {
+      "background": "#170F22",
+      "textColor": "#1A0B54",
+      "borderRadius": "0px",
+      "borderRadiusCorners": {
+        "topLeft": "0px",
+        "topRight": "0px",
+        "bottomRight": "0px",
+        "bottomLeft": "0px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "favicon": "File saved at: attached_assets/favicon.png",
+    "ogImage": "File saved at: attached_assets/ogImage.png",
+    "logoHref": "File saved at: attached_assets/logoHref.html"
+  },
+  "__llm_logo_reasoning": {
+    "selectedIndex": 1,
+    "reasoning": "Selected #1 because it is a medium-sized, visible SVG logo that links to the homepage, fitting the brand 'EternaCloud'.",
+    "confidence": 0.85,
+    "source": "llm"
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 0,
+      "text": "Contact\n\n @media (min-width: 992px) {\n\t.button {\n  \tbackground-size: 300%;\n  }\n  \n  .button:hover,\n ",
+      "reasoning": "Button #0 is the primary CTA because it uses the vibrant brand color #1C4EFF, is labeled 'Contact', and has the class 'main-cta', indicating a primary action."
+    },
+    "secondary": {
+      "index": 3,
+      "text": "Contact\n\n @media (min-width: 992px) {\n\t.button {\n  \tbackground-size: 300%;\n  }\n  \n  .button:hover,\n ",
+      "reasoning": "Button #3 is selected as the secondary CTA because it has a different background color (#170F22) and offers a similar action ('Contact'), making it a suitable secondary option."
+    },
+    "confidence": 0.95
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "businesses seeking reliable cloud solutions"
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.95,
+    "colors": 0.9,
+    "overall": 0.925
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": true,
+      "llmSucceeded": true,
+      "finalSource": "llm",
+      "rawLogoSelection": {
+        "selectedLogoIndex": 1,
+        "selectedLogoReasoning": "Selected #1 because it is a medium-sized, visible SVG logo that links to the homepage, fitting the brand 'EternaCloud'.",
+        "confidence": 0.85
+      }
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}

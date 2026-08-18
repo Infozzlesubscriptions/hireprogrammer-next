@@ -1,0 +1,98 @@
+For this section, keep the same dark purple/black background, glassmorphism cards, purple accents, rounded corners, and hover effects so it feels like part of the existing design.
+
+### Section Heading
+
+**AI Agent Solutions for Every Business**
+
+*Choose a ready-to-deploy AI agent designed to automate customer interactions, boost efficiency, and generate more revenue.*
+
+---
+
+### Layout
+
+* 4 cards in a single row (desktop)
+* 2x2 grid on tablet
+* Single column on mobile
+* Same card style as your blog cards
+* Image on top
+* Heading
+* Short description
+* CTA button
+
+---
+
+### Card 1 — Customer Service AI Agent
+
+**Image:** Customer support/chatbot illustration
+
+**Heading:**
+Customer Service AI Agent
+
+**Subtext:**
+Provide instant customer support, answer FAQs, and resolve queries 24/7 without human intervention.
+
+**Button:**
+Explore Solution →
+
+---
+
+### Card 2 — Voice AI Agent
+
+**Image:** AI voice call assistant
+
+**Heading:**
+Voice AI Agent
+
+**Subtext:**
+Handle inbound and outbound calls, qualify leads, schedule appointments, and improve response times.
+
+**Button:**
+Explore Solution →
+
+---
+
+### Card 3 — Payment Reminder AI Agent
+
+**Image:** Payment notification/dashboard
+
+**Heading:**
+Payment Reminder AI Agent
+
+**Subtext:**
+Automatically follow up on invoices and pending payments through calls, SMS, and email reminders.
+
+**Button:**
+Explore Solution →
+
+---
+
+### Card 4 — Abandoned Cart AI Agent
+
+**Image:** E-commerce shopping cart illustration
+
+**Heading:**
+Abandoned Cart AI Agent
+
+**Subtext:**
+Recover lost sales by automatically engaging customers who leave products in their cart.
+
+**Button:**
+Explore Solution →
+
+---
+
+### Design Notes
+
+* Card Background: `rgba(255,255,255,0.03)`
+* Border: `1px solid rgba(168,85,247,0.2)`
+* Border Radius: `24px`
+* Button Gradient: `#9333EA → #A855F7`
+* Hover:
+
+  * Card lifts `translateY(-8px)`
+  * Border glows purple
+  * Image zooms slightly
+* Section spacing: `120px` top and bottom
+* Max width: `1400px`
+
+This section should sit directly **above "Deploy Your First AI Agent This Week"** and visually match the blog cards shown in your screenshot.

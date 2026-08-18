@@ -1,0 +1,136 @@
+The image is a Google PageSpeed Insights report. Here's the readable text extracted and cleaned up from the screenshot:
+
+# PageSpeed Insights
+
+**Report from:** Jun 9, 2026, 12:21 PM
+**Website:** hireprogrammer.co.uk
+
+## Scores
+
+* **Performance:** 65
+* **Accessibility:** 80
+* **Best Practices:** 96
+* **SEO:** 100
+
+---
+
+## Performance Metrics
+
+| Metric                         | Value |
+| ------------------------------ | ----- |
+| First Contentful Paint (FCP)   | 1.4 s |
+| Total Blocking Time (TBT)      | 40 ms |
+| Speed Index                    | 2.9 s |
+| Largest Contentful Paint (LCP) | 6.9 s |
+| Cumulative Layout Shift (CLS)  | 0.001 |
+
+---
+
+## Opportunities
+
+### Reduce unused cache lifetimes
+
+**Potential savings:** ~101 KB
+
+### Render-blocking requests
+
+**Potential savings:** ~120 ms
+
+### Document request latency
+
+**Potential savings:** ~180 ms
+
+### Improve image delivery
+
+**Potential savings:** ~654 KB
+
+---
+
+## Diagnostics
+
+### Reduce unused JavaScript
+
+**Potential savings:** ~370 KB
+
+### Minimize main-thread work
+
+~2.5 s
+
+### Avoid enormous network payloads
+
+**Total size:** ~2,037 KB
+
+### Avoid long main-thread tasks
+
+1 long task found
+
+---
+
+## Accessibility Issues
+
+### Names and Labels
+
+* Buttons do not have an accessible name.
+
+### Best Practices
+
+* Form elements do not have associated labels.
+* Touch targets do not have sufficient size or spacing.
+
+### Contrast
+
+* Background and foreground colors do not have sufficient contrast ratio.
+
+### Navigation
+
+* Heading elements are not in a sequentially descending order.
+
+### Audio and Video
+
+* Video elements contain a `<track>` element with `kind="captions"`.
+
+---
+
+## Best Practices Issues
+
+### General
+
+* Browser errors were logged to the console.
+
+---
+
+## SEO
+
+### Passed Audit
+
+* Structured data is valid.
+
+---
+
+# Main Reasons Your Site Is Slow
+
+From this report, the biggest issues are:
+
+1. **LCP = 6.9s (Very High)**
+
+   * Your hero section is loading slowly.
+   * Usually caused by large images, videos, fonts, or animations above the fold.
+
+2. **Unused JavaScript (~370 KB)**
+
+   * Too much JS is being downloaded but not used immediately.
+
+3. **Image Optimization (~654 KB savings)**
+
+   * Images are larger than necessary.
+   * Convert to WebP/AVIF and properly size them.
+
+4. **Large Network Payload (~2 MB)**
+
+   * Total page weight is heavy.
+
+5. **Render Blocking Resources**
+
+   * Some CSS/JS files are preventing the page from rendering quickly.
+
+If this site is built in **Framer** (which I suspect from previous conversations), I can tell you exactly **which Framer settings and sections are causing the 6.9s LCP** and how to improve the score from **65 → 90+**.

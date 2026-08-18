@@ -1,0 +1,202 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "Pin Sans",
+      "role": "body"
+    },
+    {
+      "family": "Segoe UI",
+      "role": "body"
+    },
+    {
+      "family": "Roboto",
+      "role": "body"
+    },
+    {
+      "family": "Ubuntu",
+      "role": "body"
+    }
+  ],
+  "colors": {
+    "primary": "#1A73E8",
+    "secondary": "#DCE9FA",
+    "accent": "#1A73E8",
+    "background": "#FFFFFF",
+    "textPrimary": "#211922",
+    "link": "#9197A3"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Pin Sans",
+      "heading": "Pin Sans"
+    },
+    "fontStacks": {
+      "heading": [
+        "Pin Sans",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Oxygen-Sans",
+        "Apple Color Emoji",
+        "Ubuntu",
+        "Cantarell",
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        "Helvetica",
+        "ヒラギノ角ゴ Pro W3",
+        "メイリオ",
+        "Meiryo",
+        "ＭＳ Ｐゴシック",
+        "Arial",
+        "sans-serif"
+      ],
+      "body": [
+        "Pin Sans",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Oxygen-Sans",
+        "Apple Color Emoji",
+        "Ubuntu",
+        "Cantarell",
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        "Helvetica",
+        "ヒラギノ角ゴ Pro W3",
+        "メイリオ",
+        "Meiryo",
+        "ＭＳ Ｐゴシック",
+        "Arial",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Pin Sans",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Oxygen-Sans",
+        "Apple Color Emoji",
+        "Ubuntu",
+        "Cantarell",
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        "Helvetica",
+        "ヒラギノ角ゴ Pro W3",
+        "メイリオ",
+        "Meiryo",
+        "ＭＳ Ｐゴシック",
+        "Arial",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "12px",
+      "h2": "12px",
+      "body": "12px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "10px"
+  },
+  "components": {
+    "input": {
+      "background": "transparent",
+      "textColor": "#000000",
+      "borderColor": null,
+      "borderRadius": "0px",
+      "borderRadiusCorners": {
+        "topLeft": "0px",
+        "topRight": "0px",
+        "bottomRight": "0px",
+        "bottomLeft": "0px"
+      },
+      "shadow": "none"
+    },
+    "buttonPrimary": {
+      "background": "#E5E5E0",
+      "textColor": "#000000",
+      "borderRadius": "16px",
+      "borderRadiusCorners": {
+        "topLeft": "16px",
+        "topRight": "16px",
+        "bottomRight": "16px",
+        "bottomLeft": "16px"
+      },
+      "shadow": "none"
+    },
+    "buttonSecondary": {
+      "background": "#FFFFFF",
+      "textColor": "#000000",
+      "borderRadius": "16px",
+      "borderRadiusCorners": {
+        "topLeft": "16px",
+        "topRight": "16px",
+        "bottomRight": "16px",
+        "bottomLeft": "16px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "favicon": "File saved at: attached_assets/favicon.png",
+    "ogImage": "https://i.pinimg.com/736x/f2/ee/b3/f2eeb33c51355f52df8308aa33a9280d.jpg",
+    "logoHref": "File saved at: attached_assets/logoHref.html"
+  },
+  "__llm_logo_reasoning": {
+    "selectedIndex": 0,
+    "reasoning": "Selected #0 because it is located in the header, is visible, and links to the homepage, which are strong indicators of a primary brand logo.",
+    "confidence": 0.9,
+    "source": "llm"
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 0,
+      "text": "Sign up",
+      "reasoning": "The 'Sign up' button is typically the primary call-to-action on platforms, encouraging new user engagement. It stands out as the main action-oriented button."
+    },
+    "secondary": {
+      "index": 1,
+      "text": "Log in",
+      "reasoning": "The 'Log in' button serves as a secondary action for returning users, complementing the primary 'Sign up' action."
+    },
+    "confidence": 0.9
+  },
+  "personality": {
+    "tone": "modern",
+    "energy": "medium",
+    "targetAudience": "tech-savvy users interested in web3 and eCommerce"
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.9,
+    "colors": 0.9,
+    "overall": 0.9
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": true,
+      "llmSucceeded": true,
+      "finalSource": "llm",
+      "rawLogoSelection": {
+        "selectedLogoIndex": 0,
+        "selectedLogoReasoning": "Selected #0 because it is located in the header, is visible, and links to the homepage, which are strong indicators of a primary brand logo.",
+        "confidence": 0.9
+      }
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}
