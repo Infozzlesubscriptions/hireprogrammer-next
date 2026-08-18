@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "@fontsource-variable/inter";
 import "./globals.css";
 import { ClientProviders } from "./providers";
@@ -33,16 +34,20 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-TT68EGJYRK" />
-        <script
-          suppressHydrationWarning
+      </head>
+      <body className="antialiased">
+        <ClientProviders>{children}</ClientProviders>
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-TT68EGJYRK"
+        />
+        <Script
+          id="gtag-config"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TT68EGJYRK');`,
           }}
         />
-      </head>
-      <body className="antialiased">
-        <ClientProviders>{children}</ClientProviders>
       </body>
     </html>
   );
