@@ -59,6 +59,7 @@ export async function POST(request: NextRequest) {
     await transporter.sendMail({
       from: `"HireProgrammer Website" <${user}>`,
       to: CONTACT_EMAIL,
+      cc: "srinath.u@infozzle.com",
       replyTo: body.from_email,
       subject: `New enquiry from ${body.from_name}`,
       text: buildPlainText(body),
