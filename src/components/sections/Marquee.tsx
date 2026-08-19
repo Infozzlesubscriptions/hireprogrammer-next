@@ -309,7 +309,7 @@ export function Marquee() {
                         <div className="text-4xl font-black text-white leading-none mb-2">2 hrs
                                         </div>
                         <div className="flex items-center gap-1.5">
-                            <span className="text-[10px] font-mono text-white/30"></></span>
+                            <span className="text-[10px] font-mono text-white/30">{"</>"}</span>
                             <span className="text-xs text-white/35">Any tech stack</span>
                         </div>
                     </motion.div>
