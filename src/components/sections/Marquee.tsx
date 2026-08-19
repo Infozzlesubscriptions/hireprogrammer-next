@@ -163,7 +163,7 @@ export function Marquee() {
                             className="text-transparent bg-clip-text"
                             style={{
                                 backgroundImage: "linear-gradient(135deg, #e070ff 0%, #a040ff 50%, #c040ff 100%)"
-                            }}>speak for themselves</span>
+                            }}>speak for themselves!</span>
                     </h2>
                     <p
                         className="mt-3 text-sm"
