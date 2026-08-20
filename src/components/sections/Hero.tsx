@@ -53,7 +53,7 @@ export function Hero() {
           >
             Software Developers
           </span>
-          <br />in the UK
+          <br /> in the UK
         </h1>
 
         {/* Subheading */}
