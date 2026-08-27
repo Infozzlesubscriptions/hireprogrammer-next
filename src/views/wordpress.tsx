@@ -122,7 +122,8 @@ export default function WordPressPage() {
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
           <img
             src="/wp-hero-banner.png"
-            alt=""
+            alt="WordPress SEO Services"
+            title="WordPress SEO Services"
             className="absolute inset-0 w-full h-full object-cover"
             style={{ filter: "brightness(0.45) saturate(1.1)" }}
           />

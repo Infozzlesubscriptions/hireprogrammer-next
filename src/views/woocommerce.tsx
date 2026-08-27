@@ -134,7 +134,8 @@ export default function WooCommercePage() {
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
           <img
             src="/woo-hero-banner.png"
-            alt=""
+            alt="WooCommerce SEO Services"
+            title="WooCommerce SEO Services"
             className="absolute inset-0 w-full h-full object-cover"
             style={{ filter: "brightness(0.45) saturate(1.1)" }}
           />

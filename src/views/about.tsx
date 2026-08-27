@@ -617,7 +617,8 @@ export default function AboutPage() {
         {/* Background image */}
         <img
           src={`/about-commitment-bg.jpg`}
-          alt=""
+          alt="About Us Commitment"
+title="Our Commitment"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: "brightness(0.55) saturate(1.1)" }}
         />

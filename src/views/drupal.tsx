@@ -147,7 +147,8 @@ export default function DrupalPage() {
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
           <img
             src="/drupal-hero-banner.png"
-            alt=""
+            alt="Drupal SEO Services"
+            title="Drupal SEO Services"
             className="absolute inset-0 w-full h-full object-cover"
             style={{ filter: "brightness(0.45) saturate(1.1)" }}
           />

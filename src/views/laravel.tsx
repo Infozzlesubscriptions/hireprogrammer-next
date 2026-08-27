@@ -126,7 +126,8 @@ export default function LaravelPage() {
       {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden pt-24">
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
-          <img src="/laravel-hero-banner.png" alt="" className="absolute inset-0 w-full h-full object-cover" style={{ filter: "brightness(0.45) saturate(1.1)" }} />
+          <img src="/laravel-hero-banner.png" alt="Laravel Development Services"
+title="Laravel Development Services" className="absolute inset-0 w-full h-full object-cover" style={{ filter: "brightness(0.45) saturate(1.1)" }} />
           <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(8,3,22,0.85) 0%, rgba(8,3,22,0.55) 50%, rgba(8,3,22,0.80) 100%)" }} />
           <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 60% at 30% 50%, rgba(124,58,237,0.07) 0%, transparent 65%)" }} />
         </motion.div>
