@@ -104,7 +104,7 @@ export default function QuotePage() {
     return e;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
@@ -118,7 +118,7 @@ export default function QuotePage() {
         budget: form.budget,
         message: form.message,
         page_source: "Quote Request Page",
-      });
+      }, e.currentTarget);
       setSubmitted(true);
     } catch (err) {
       console.error("EmailJS error:", err);
@@ -217,6 +217,7 @@ export default function QuotePage() {
                 gap: 24,
               }}
             >
+              <input type="text" name="website" tabIndex={-1} autoComplete="off" style={{ display: "none" }} aria-hidden="true" />
               {/* Row 1: name + email */}
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }} className="quote-grid">
                 <FieldWrap label="Full Name *" icon={<User style={{ width: 15, height: 15 }} />} err={errors.name}>

@@ -109,7 +109,7 @@ function ContactForm() {
 
   const set = (k: keyof typeof form) => (v: string) => setForm(f => ({ ...f, [k]: v }));
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     try {
@@ -119,7 +119,7 @@ function ContactForm() {
         phone:       form.phone,
         message:     form.message,
         page_source: "Contact Page",
-      });
+      }, e.currentTarget);
       setSent(true);
     } catch (err) {
       console.error("EmailJS error:", err);
@@ -188,6 +188,7 @@ function ContactForm() {
             onSubmit={handleSubmit}
             className="relative z-10 flex flex-col gap-6"
           >
+            <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
             <div className="mb-2">
               <div
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs text-primary font-semibold uppercase tracking-widest mb-4"

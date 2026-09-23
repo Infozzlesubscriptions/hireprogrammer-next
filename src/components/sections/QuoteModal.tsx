@@ -91,7 +91,7 @@ export function QuoteModal({ open, onClose, initialService }: Props) {
     return e;
   };
 
-  const submit = async (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
@@ -105,7 +105,7 @@ export function QuoteModal({ open, onClose, initialService }: Props) {
         budget:      form.budget,
         message:     form.message,
         page_source: "Quote Request Modal",
-      });
+      }, e.currentTarget);
       setSubmitted(true);
     } catch (err) {
       console.error("EmailJS error:", err);
@@ -267,6 +267,7 @@ export function QuoteModal({ open, onClose, initialService }: Props) {
                   </div>
 
                   <form onSubmit={submit} noValidate>
+                    <input type="text" name="website" tabIndex={-1} autoComplete="off" style={{ display: "none" }} aria-hidden="true" />
                     {/* row 1: name + email */}
                     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }}>
                       <Field label="Full Name *" icon={<User style={{ width: 13, height: 13 }} />} err={errors.name}>

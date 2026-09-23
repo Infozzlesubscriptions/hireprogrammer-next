@@ -24,7 +24,7 @@ function EnquiryModal({ open, onClose }: { open: boolean; onClose: () => void })
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm(f => ({ ...f, [k]: e.target.value }));
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim()) return;
     setSending(true);
@@ -35,7 +35,7 @@ function EnquiryModal({ open, onClose }: { open: boolean; onClose: () => void })
         phone:       form.phone,
         message:     form.message,
         page_source: "AI Team Training Enquiry",
-      });
+      }, e.currentTarget);
       setSent(true);
     } catch (err) {
       console.error("EmailJS error:", err);
@@ -94,6 +94,7 @@ function EnquiryModal({ open, onClose }: { open: boolean; onClose: () => void })
                     <p className="text-white/40 text-sm">Tell us about your team — we'll get back to you within 24 hours.</p>
                   </div>
                   <form onSubmit={handleSubmit} className="space-y-4">
+                    <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
                     {[
                       { key: "name",    label: "Your Name *",        type: "text",  placeholder: "Jane Smith" },
                       { key: "email",   label: "Email Address *",    type: "email", placeholder: "jane@company.co.uk" },
@@ -211,7 +212,7 @@ export default function AiTeamTrainingPage() {
   const setHero = (k: keyof typeof heroForm) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setHeroForm(f => ({ ...f, [k]: e.target.value }));
 
-  const handleHeroSubmit = async (e: React.FormEvent) => {
+  const handleHeroSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!heroForm.name.trim() || !heroForm.email.trim()) return;
     setHeroSending(true);
@@ -222,7 +223,7 @@ export default function AiTeamTrainingPage() {
         phone:       heroForm.phone,
         message:     heroForm.team,
         page_source: "AI Team Training Hero Form",
-      });
+      }, e.currentTarget);
       setHeroSent(true);
     } catch {
       alert("Sorry, something went wrong. Please email us directly at contact@hireprogrammer.co.uk");
@@ -293,6 +294,7 @@ export default function AiTeamTrainingPage() {
                     <p className="text-white/40 text-sm">Free consultation, no commitment</p>
                   </div>
                   <form onSubmit={handleHeroSubmit} className="space-y-4">
+                    <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
                     {[
                       { key: "name",  label: "FULL NAME *",       type: "text",  placeholder: "Jane Smith" },
                       { key: "email", label: "EMAIL ADDRESS *",   type: "email", placeholder: "jane@company.co.uk" },

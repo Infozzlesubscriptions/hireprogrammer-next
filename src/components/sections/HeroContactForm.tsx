@@ -43,7 +43,7 @@ export function HeroContactForm({
   const inputStyle = { background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)" };
   const labelCls  = "block text-white/50 text-xs font-semibold uppercase tracking-wider mb-1.5";
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim()) return;
     setSending(true);
@@ -56,7 +56,7 @@ export function HeroContactForm({
         service:     extraField ? `${extraField.label}: ${form.extra}` : undefined,
         message:     form.message || form.extra,
         page_source: pageName,
-      });
+      }, e.currentTarget);
       setSent(true);
     } catch {
       setError("Something went wrong. Please email us directly at srinath.u@infozzle.com");
@@ -91,6 +91,7 @@ export function HeroContactForm({
 
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
+      <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
       <div>
         <label className={labelCls}>Full Name *</label>
         <input
