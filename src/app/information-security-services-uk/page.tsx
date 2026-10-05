@@ -4,7 +4,7 @@ import InformationSecurityPage from "@/views/information-security";
 export const metadata: Metadata = {
   title: "Information Security Services UK",
   description: "Protect your business with Information Security Services from Hire Programmer. Secure your infrastructure, applications, networks, and sensitive data.",
-  alternates: { canonical: "https://hireprogrammer.co.uk/information-security" },
+  alternates: { canonical: "https://hireprogrammer.co.uk/information-security-services-uk" },
 };
 
 export default InformationSecurityPage;

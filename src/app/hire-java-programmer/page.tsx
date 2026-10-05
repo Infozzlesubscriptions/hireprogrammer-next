@@ -4,7 +4,7 @@ import JavaPage from "@/views/java";
 export const metadata: Metadata = {
   title: "Hire Java Developers",
   description: "Hire Programmer provides skilled Java developers for enterprise applications, backend systems, APIs, and custom software development.",
-  alternates: { canonical: "https://hireprogrammer.co.uk/java" },
+  alternates: { canonical: "https://hireprogrammer.co.uk/hire-java-programmer" },
 };
 
 export default JavaPage;

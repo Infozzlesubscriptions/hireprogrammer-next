@@ -4,7 +4,7 @@ import DrupalPage from "@/views/drupal";
 export const metadata: Metadata = {
   title: "Drupal Development Services UK",
   description: "Hire Programmer develops secure, scalable, and feature-rich Drupal websites tailored to your business and enterprise requirements.",
-  alternates: { canonical: "https://hireprogrammer.co.uk/drupal" },
+  alternates: { canonical: "https://hireprogrammer.co.uk/drupal-development-services-uk" },
 };
 
 export default DrupalPage;
