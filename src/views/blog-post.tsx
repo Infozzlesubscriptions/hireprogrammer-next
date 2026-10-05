@@ -77,7 +77,7 @@ export default function BlogPostPage() {
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.6 }} className="text-3xl md:text-5xl font-black text-white leading-[1.1] tracking-tight mb-6">
             Why Every Startup Needs a{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF40C8] via-[#7C3AED] to-[#C060FF]">Scalable Tech Stack</span>
-            {" "}in 2025
+            {" "}in 2026
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18 }} className="text-white/50 text-lg leading-relaxed">
             Launching a startup is one of the most exciting journeys an entrepreneur can take. You have the idea, the passion, and the ambition — but transforming that vision into a reality requires more than just drive. It requires a solid, scalable technology foundation.

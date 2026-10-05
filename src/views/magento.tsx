@@ -180,7 +180,6 @@ export default function MagentoPage() {
               initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.65 }}
               className="text-4xl md:text-6xl font-black text-white leading-[1.08] tracking-tight mb-6"
             >
-              Expert{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF40C8] via-[#7C3AED] to-[#C060FF]">
                 Magento Development
               </span>

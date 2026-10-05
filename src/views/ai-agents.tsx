@@ -274,8 +274,7 @@ export default function AiAgentsPage() {
               <span className="text-transparent bg-clip-text"
                 style={{ backgroundImage: "linear-gradient(135deg, #e070ff 0%, #a040ff 50%, #c040ff 100%)" }}>
                 Development Services
-              </span>{" "}
-              for Your Business
+              </span>
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.6 }}
               className="text-white/55 text-lg leading-relaxed mb-8 max-w-lg">

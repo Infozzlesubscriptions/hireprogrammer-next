@@ -84,7 +84,7 @@ export default function BlogWoocommerceMagentoPage() {
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.6 }} className="text-3xl md:text-5xl font-black text-white leading-[1.1] tracking-tight mb-6">
             WooCommerce vs Magento:{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF40C8] via-[#7C3AED] to-[#C060FF]">The Ultimate Comparison</span>
-            {" "}for 2025
+            {" "}for 2026
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18 }} className="text-white/50 text-lg leading-relaxed mb-8">
             Choosing between WooCommerce and Magento can define the trajectory of your online store. We examine cost, scalability, plugin ecosystem, and developer support to give you a clear-eyed view of which platform wins for your use case.

@@ -60,12 +60,10 @@ export default function WorkflowAutomationPage() {
             <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.65 }}
               className="font-black text-white leading-[1.08] tracking-tight mb-6"
               style={{ fontSize: "clamp(2.2rem, 4.8vw, 4rem)" }}>
-              Expert{" "}
               <span className="text-transparent bg-clip-text"
                 style={{ backgroundImage: "linear-gradient(135deg, #e070ff 0%, #a040ff 50%, #c040ff 100%)" }}>
                 Workflow Automation Services
-              </span>{" "}
-              for Your Business
+              </span>
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.6 }}
               className="text-white/55 text-lg leading-relaxed mb-8 max-w-lg">

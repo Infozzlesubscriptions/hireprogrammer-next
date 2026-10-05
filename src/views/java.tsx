@@ -155,9 +155,8 @@ title="Java Development Services" className="absolute inset-0 w-full h-full obje
               <Code2 className="w-3 h-3" /> Java Development Services
             </motion.div>
             <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.65 }} className="text-4xl md:text-6xl font-black text-white leading-[1.08] tracking-tight mb-6">
-              Hire Expert{" "}
+              Hire{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF40C8] via-[#7C3AED] to-[#C060FF]">Java Developers</span>
-              <br />for Your Business
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.6 }} className="text-white/50 text-xl leading-relaxed mb-10 max-w-md">
               Build the right product from the very start — with UK's leading Java development agency.

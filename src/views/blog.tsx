@@ -187,8 +187,8 @@ export default function BlogPage() {
               <BookOpen className="w-3 h-3" /> Our Blog
             </motion.div>
             <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.6 }} className="text-5xl md:text-7xl font-black text-white leading-[1.05] tracking-tight mb-5">
-              Technology & Software{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF40C8] via-[#7C3AED] to-[#C060FF]">Development Blog</span>
+              Software Development & AI{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF40C8] via-[#7C3AED] to-[#C060FF]">Insights Blog</span>
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18, duration: 0.55 }} className="text-white/50 text-xl leading-relaxed max-w-xl">
               We are fully committed to elevating our clients to new heights — explore our latest thinking on tech, strategy, and growth.

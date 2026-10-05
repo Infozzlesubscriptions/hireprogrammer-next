@@ -646,7 +646,7 @@ title="Our Commitment"
           >
             About{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF40C8] via-[#7C3AED] to-[#C060FF]">
-              Hire Programmer
+              Us
             </span>
           </motion.h1>
 

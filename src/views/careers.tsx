@@ -51,7 +51,7 @@ export default function Careers() {
             Join Our Team
           </span>
           <h1 className="text-4xl sm:text-5xl font-black text-white mb-5">
-            Careers at Hire Programmer
+            Careers
           </h1>
           <p className="text-base sm:text-lg max-w-lg mx-auto leading-relaxed" style={{ color: "rgba(220,200,255,0.6)" }}>
             We connect talented developers with clients who need real expertise.
