@@ -75,7 +75,7 @@ export default function BlogShopifyPage() {
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.6 }} className="text-3xl md:text-5xl font-black text-white leading-[1.1] tracking-tight mb-6">
             Is{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF40C8] via-[#7C3AED] to-[#C060FF]">Shopify</span>
-            {" "}Worth It for a<br />Small Business?
+            {" "}Worth It for a{" "}<br />Small Business?
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18 }} className="text-white/50 text-lg leading-relaxed">
             Yes, Shopify is worth it for small businesses in 2025. It offers user-friendly tools, customisable themes, secure payment options, and scalable features. With excellent customer support and integrations, it simplifies your path to online success. But is Shopify the right ecommerce solution for your small business? That depends on several factors.

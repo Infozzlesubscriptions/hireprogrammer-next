@@ -156,7 +156,7 @@ export default function QuotePage() {
             Free Quote — No Obligation
           </span>
           <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.25rem)", fontWeight: 800, margin: "0 0 16px", lineHeight: 1.15 }}>
-            Request a <span style={{ color: ACCENT }}>Project Quote</span>
+            Get a <span style={{ color: ACCENT }}>Free Quote</span>
           </h1>
           <p style={{ fontSize: "clamp(1rem, 2vw, 1.2rem)", color: "rgba(255,255,255,0.55)", maxWidth: 520, margin: "0 auto" }}>
             Tell us about your project and we'll respond within 1 business day with a tailored proposal.

@@ -188,7 +188,7 @@ export default function JoomlaPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF40C8] via-[#7C3AED] to-[#C060FF]">
                 Joomla Development
               </span>
-              <br />Services UK
+              {" "}<br />Services UK
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.6 }}
